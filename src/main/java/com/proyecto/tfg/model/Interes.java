@@ -25,5 +25,9 @@ public class Interes {
 
     @OneToMany(mappedBy = "interes")
     private List<Usuario> usuarios;
+    public void setIdInteres(int idInteres) {
+        this.idInteres = idInteres;
+    }
+
 }
 

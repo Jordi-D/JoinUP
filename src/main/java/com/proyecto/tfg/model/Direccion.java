@@ -43,4 +43,8 @@ public class Direccion {
 
     @OneToMany(mappedBy = "direccion")
     private List<Usuario> usuarios;
+    public void setIdDireccion(int idDireccion) {
+        this.idDireccion = idDireccion;
+    }
+
 }

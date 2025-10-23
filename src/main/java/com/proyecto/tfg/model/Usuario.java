@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
 
-@Data
 @Entity
 @Table(name = "Usuarios")
 public class Usuario {
@@ -44,4 +43,85 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<UsuarioEvento> eventos;
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getAp1() {
+        return ap1;
+    }
+
+    public void setAp1(String ap1) {
+        this.ap1 = ap1;
+    }
+
+    public String getAp2() {
+        return ap2;
+    }
+
+    public void setAp2(String ap2) {
+        this.ap2 = ap2;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+    public Interes getInteres() {
+        return interes;
+    }
+
+    public void setInteres(Interes interes) {
+        this.interes = interes;
+    }
+
+    public List<UsuarioEvento> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(List<UsuarioEvento> eventos) {
+        this.eventos = eventos;
+    }
 }
+

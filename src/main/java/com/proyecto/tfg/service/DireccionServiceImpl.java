@@ -1,31 +1,32 @@
 package com.proyecto.tfg.service;
 
-import com.proyecto.tfg.model.Evento;
-import com.proyecto.tfg.service.db.EventoServiceJpa;
+
+import com.proyecto.tfg.model.Direccion;
+import com.proyecto.tfg.service.db.DireccionServiceJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class EventoServiceImpl implements IEventoService {
+public class DireccionServiceImpl implements IDireccionService {
 
     @Autowired
-    private EventoServiceJpa repo;
+    private DireccionServiceJpa repo;
 
     @Override
-    public List<Evento> listarTodos() {
+    public List<Direccion> listarTodas() {
         return repo.findAll();
     }
 
     @Override
-    public Evento buscarPorId(Integer id) {
+    public Direccion buscarPorId(Integer id) {
         return repo.findById(id).orElse(null);
     }
 
     @Override
-    public Evento guardar(Evento evento) {
-        return repo.save(evento);
+    public Direccion guardar(Direccion direccion) {
+        return repo.save(direccion);
     }
 
     @Override

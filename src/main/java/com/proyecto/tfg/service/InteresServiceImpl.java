@@ -1,31 +1,31 @@
 package com.proyecto.tfg.service;
 
-import com.proyecto.tfg.model.Evento;
-import com.proyecto.tfg.service.db.EventoServiceJpa;
+import com.proyecto.tfg.model.Interes;
+import com.proyecto.tfg.service.db.InteresServiceJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class EventoServiceImpl implements IEventoService {
+public class InteresServiceImpl implements InteresService {
 
     @Autowired
-    private EventoServiceJpa repo;
+    private InteresServiceJpa repo;
 
     @Override
-    public List<Evento> listarTodos() {
+    public List<Interes> listarTodos() {
         return repo.findAll();
     }
 
     @Override
-    public Evento buscarPorId(Integer id) {
+    public Interes buscarPorId(Integer id) {
         return repo.findById(id).orElse(null);
     }
 
     @Override
-    public Evento guardar(Evento evento) {
-        return repo.save(evento);
+    public Interes guardar(Interes interes) {
+        return repo.save(interes);
     }
 
     @Override

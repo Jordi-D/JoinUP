@@ -13,7 +13,7 @@ public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_evento")
-    private int idEvento;
+    private Integer idEvento;
 
     @Column(name = "id_organ")
     private int idOrgan; // podría ser un Usuario.organizador
@@ -48,5 +48,10 @@ public class Evento {
 
     @OneToMany(mappedBy = "evento")
     private List<UsuarioEvento> usuarios;
+    public void setIdEvento(int idEvento) {
+        this.idEvento = idEvento;
+    }
+
+
 }
 
