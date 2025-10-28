@@ -8,11 +8,12 @@ import java.util.Optional;
 public interface IUsuarioService {
     void createAccount(Usuario usuario);
 
-    Usuario fetchAccount(String mobileNumber);
+    Optional<Usuario> fetchAccount(int idCliente);
 
+    List<Usuario> findAll();
 
     boolean updateAccount(Usuario usuario);
 
 
-    boolean deleteAccount(String mobileNumber);
+    boolean deleteAccount(int idCliente);
 }

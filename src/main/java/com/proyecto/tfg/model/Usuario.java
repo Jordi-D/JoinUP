@@ -22,7 +22,8 @@ public class Usuario {
     @Column(name = "d_ap2", length = 45)
     private String ap2;
 
-    @Column(name = "d_email", nullable = false, unique = true, length = 45)
+
+    @Column(name = "d_email", unique = true, nullable = false, length = 100)
     private String email;
 
     @Column(name = "d_password", nullable = false, length = 45)

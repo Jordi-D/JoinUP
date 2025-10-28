@@ -11,10 +11,6 @@ import java.util.Optional;
 @Repository
 public interface UsuarioServiceJpa extends JpaRepository<Usuario, Integer> {
 
-    @Transactional
-    @Modifying
-    void deleteByIdCliente(Long usuarioId);
-
     Optional<Usuario> findByEmail(String email);
 
 }

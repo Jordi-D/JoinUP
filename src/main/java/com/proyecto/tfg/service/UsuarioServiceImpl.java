@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {
@@ -48,17 +47,34 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
     @Override
-    public Usuario fetchAccount(String mobileNumber) {
-        return null;
+    public Optional<Usuario> fetchAccount(int idCliente) {
+        return repo.findById(idCliente);
+    }
+
+    @Override
+    public List<Usuario> findAll() {
+    return repo.findAll();
     }
 
     @Override
     public boolean updateAccount(Usuario usuario) {
-        return false;
+        if (repo.existsById(usuario.getIdCliente())) {
+            repo.save(usuario); // save() actualiza si el ID ya existe
+            return true;         // actualización exitosa
+        } else {
+            return false;        // no existe el usuario a actualizar
+        }
     }
 
+
     @Override
-    public boolean deleteAccount(String mobileNumber) {
-        return false;
+    public boolean deleteAccount(int idCliente) {
+        Optional<Usuario> usuarioOpt = repo.findById(idCliente);
+        if (usuarioOpt.isPresent()) {
+            repo.delete(usuarioOpt.get());
+            return true; // Eliminación exitosa
+        }
+        return false; // Usuario no encontrado
     }
+
 }
