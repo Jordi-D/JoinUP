@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area de usuario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Hacer premium</a> <!-- Recordar que solo tiene que aparecer esta pestaña para los usuarios que no son premiums -->
+        </nav>
+
+        <button class="btn-logout">Cerrar sesión</button>
+    </header>
+
+
+    <main class="main-container">
+
+        <section class="panel-izquierdo">
+
+            <div class="perfil-usuario">
+                <div class="avatar-usuario">
+            <img src="../imagenes/usuario.png"
+                class="avatar" alt="Usuario">
+                 <img class="editar-icono"
+             src="https://img.icons8.com/windows/64/create-new.png"
+             alt="editar">
+              <input type="file" id="avatar-input" accept="image/*" style="display:none;">
+
+              
+            <img class="borrar-foto" width="64" height="64" src="https://img.icons8.com/material-outlined/96/remove-image.png" alt="eliminar-avatar"/>
+            </div> <!-- cierre avatar-usuario -->
+
+
+            <h3 class="usuario-nombre">Marina Blanco</h3>
+
+            </div>
+            <p class="usuario-email">marinablanco@example.com</p>
+
+            <nav class="menu">
+                <button class="menu-item">Información personal</button>
+                <button class="menu-item">Deseados</button>
+                <button class="menu-item">Mis eventos</button>
+                <button class="menu-item active">Ajustes</button>
+            </nav>
+
+
+        </section>
+
+        <section class="panel-derecho">
+
+            <div id="pantalla-info" class="pantalla">
+            <h2 class="titulo-seccion">Información personal</h2>
+            <p>Aquí irá la Información personal: 
+                 El flujo que podíamos hacer es que la información registrada en el registro saliera en información personal y luego los ajustes asi como lo tengo por el hecho de si queremos cambiarlo, como por ejemplo si nos mudamos.
+            </p>
+            </div>
+
+            <div id="pantalla-deseados" class="pantalla">
+                <h2 class="titulo-seccion">Deseados</h2>
+                <p>Aquí irán tus eventos deseados...</p>
+            </div>
+
+            <div id="pantalla-eventos" class="pantalla">
+                <h2 class="titulo-seccion">Mis eventos</h2>
+                <p>Aquí irán tus eventos creados o participados...</p>
+            </div>
+
+            <div id="pantalla-ajustes" class="pantalla visible">
+                <h2 class="titulo-seccion">Ajustes</h2>
+                <form class="form-grid">
+
+                <div class="campo">
+                    <label>Fecha de nacimiento</label>
+                    <input type="date">
+                </div>
+
+                <div class="fila-ubicacion">
+               
+                <div class="campo campo-ciudad">
+                    <label>Ciudad</label>
+                    <input type="text">
+                </div>
+
+                <div class="campo campo-provincia">
+                    <label>Provincia</label>
+                    <select>
+                        <option value="">Seleccione una provincia</option>
+                        <option>A Coruña</option>
+                        <option>Álava</option>
+                        <option>Albacete</option>
+                        <option>Alicante</option>
+                        <option>Almería</option>
+                        <option>Asturias</option>
+                        <option>Ávila</option>
+                        <option>Badajoz</option>
+                        <option>Barcelona</option>
+                        <option>Burgos</option>
+                        <option>Cáceres</option>
+                        <option>Cádiz</option>
+                        <option>Cantabria</option>
+                        <option>Castellón</option>
+                        <option>Ciudad Real</option>
+                        <option>Córdoba</option>
+                        <option>Cuenca</option>
+                        <option>Girona</option>
+                        <option>Granada</option>
+                        <option>Guadalajara</option>
+                        <option>Gipuzkoa</option>
+                        <option>Huelva</option>
+                        <option>Huesca</option>
+                        <option>Illes Balears</option>
+                        <option>Jaén</option>
+                        <option>La Rioja</option>
+                        <option>Las Palmas</option>
+                        <option>León</option>
+                        <option>Lleida</option>
+                        <option>Lugo</option>
+                        <option>Madrid</option>
+                        <option>Málaga</option>
+                        <option>Murcia</option>
+                        <option>Navarra</option>
+                        <option>Ourense</option>
+                        <option>Palencia</option>
+                        <option>Pontevedra</option>
+                        <option>Salamanca</option>
+                        <option>Segovia</option>
+                        <option>Sevilla</option>
+                        <option>Soria</option>
+                        <option>Tarragona</option>
+                        <option>Santa Cruz de Tenerife</option>
+                        <option>Teruel</option>
+                        <option>Toledo</option>
+                        <option>Valencia</option>
+                        <option>Valladolid</option>
+                        <option>Vizcaya</option>
+                        <option>Zamora</option>
+                        <option>Zaragoza</option>
+                    </select>
+                </div>
+
+                </div> <!-- cierre fila-ubicacion -->
+
+                <div class="campo">
+                    <label>Teléfono</label>
+                    <input type="text">
+                </div>
+
+                <div class="campo redes-sociales">
+  
+                    <div class="campo redes-sociales">
+                    <label>Redes sociales</label>
+
+                    <div class="social-add">
+                        <select id="social-type">
+                            <option value="instagram">Instagram</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="twitter">Twitter / X</option>
+                            <option value="linkedin">LinkedIn</option>
+                        </select>
+
+                        <input type="url" id="social-url" placeholder="https://...">
+
+                        <button type="button" id="add-social">Añadir</button>
+                    </div>
+
+                    <ul id="social-list" class="social-list"></ul>
+                    </div>
+                </div> <!-- cierre campo redes-sociales -->
+
+                <div class="campo campo-textarea">
+                    <label>Intereses</label>
+                    <textarea></textarea>
+                </div>
+
+                <div class="campo campo-textarea">
+                    <label>Comentarios y valoraciones</label>
+                    <textarea></textarea>
+                </div>
+                <button type="submit" class="btn-guardar">Guardar cambios</button>
+            </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    </div> <!-- cierre container -->
+
+    <script src="script.js"></script>
+</body>
+</html>
