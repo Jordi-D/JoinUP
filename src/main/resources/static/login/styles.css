@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "Modern"; 
+  src: url("../fuentes/ModernAesthetic-DemoVersion-Regular.otf");
+}
+
+@font-face {
+    font-family: "Actor" ;
+    src: url("../fuentes/Actor-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat" ;
+    src: url("../fuentes/MontserratAlternates-Regular.ttf");
+}
+@font-face {
+    font-family: "Montserrat bold" ;
+    src: url("../fuentes/MontserratAlternates-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("../fuentes/Oswald-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../fuentes/Quicksand-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Staatliches" ;
+    src: url("../fuentes/Staatliches-Regular.ttf");
+}
+
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Actor";
+}
+:root{
+  --fondo-principal: #4B6DA7;
+  --texto-principal: #2D3748;
+  --color-marca: #38B2AC;
+  --botones: #F6AD55;
+  --boton-secundario: #FB7D6D;
+  --fondo-secundario: #F5F9FA;
+}
+body{
+    background-color: var(--fondo-principal);
+    width: auto;
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    
+}
+
+.header-enlace img{
+    width: 80px;
+    height: auto;
+    transform: scaleX(-1);
+    margin-left: 50px;
+}
+
+.header-enlace {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 14px;
+    margin-top: 6px;
+
+}
+.titleh4 {
+    font-family: "Modern", sans-serif;
+    color: white;
+    font-size: 15px;
+    margin-left: 20px;
+    
+}
+.container{
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    margin-top: 10vh;
+}
+
+.panel-izquierdo{
+    background-color: white;
+    width: 50%;
+}
+
+.bienvenida{
+    background-color: var(--fondo-secundario);
+}
+.bienvenida h1{
+    font-family: "Staatliches", sans-serif;
+    text-align: center;
+    padding: 50px;
+    color: var(--color-marca);
+    font-size: 96px;
+    font-weight: lighter;
+
+}
+
+.panel-izquierdo img{
+    display: block;
+    margin: -50px auto;
+    width: 436px;
+    height: 654px;
+}
+.panel-derecho{
+    background-image: url(../imagenes/momentos-de-celebracion-de-amigas.jpg);
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.formulario-login {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 70%;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-top: 100px;
+}
+.inputs-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario-login h2 {
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--texto-principal);
+    font-size: 36px;
+}
+.formulario-login input {
+    width: 60%;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #605F5F;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+    color: white;
+    font-family: "Actor" ;
+}
+.formulario-login input::placeholder {
+    color: #E0E0E0;
+    font-family: "Modern", sans-serif;
+}
+
+.inputs-login button {
+    width: 40%;
+    padding: 12px;
+    background-color: var(--botones);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-family: "Modern", sans-serif;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.inputs-login button:hover{
+    background-color: var(--boton-secundario)
+}
+
+.crear-cuenta:hover{
+    background-color: var(--boton-secundario);
+}
+
+.formulario-login .google-login {
+    width: 60%;
+    padding: 12px;
+    background-color: var(--botones);
+    border: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    color: white;
+    font-size: 18px;
+    font-family: "Modern", sans-serif;
+    cursor: pointer;
+    background-color: var(--boton-secundario);
+}
+
+.formulario-login .google-login img {
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 30px;
+    height: auto;
+    
+}
+
+.inputs-login a{
+    text-align: right;
+    margin-top: 5px;
+    margin-left: 150px;
+    margin-bottom: 20px;
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-style: italic;
+    font-family: "Quicksand", sans-serif;
+}
+.crear-cuenta{
+    width: 40%;
+    padding: 12px;
+    background-color: var(--botones);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-family: "Modern", sans-serif;
+    cursor: pointer;
+    margin: 8px auto 0 180px;
+}
+
+#token-google:hover {
+    background-color: #ff462d;
+}
