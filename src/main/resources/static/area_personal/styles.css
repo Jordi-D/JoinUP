@@ -1,0 +1,356 @@
+@font-face {
+  font-family: "Modern"; 
+  src: url("../fuentes/ModernAesthetic-DemoVersion-Regular.otf");
+}
+
+@font-face {
+    font-family: "Actor" ;
+    src: url("../fuentes/Actor-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat" ;
+    src: url("../fuentes/MontserratAlternates-Regular.ttf");
+}
+@font-face {
+    font-family: "Montserrat bold" ;
+    src: url("../fuentes/MontserratAlternates-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("../fuentes/Oswald-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../fuentes/Quicksand-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Staatliches" ;
+    src: url("../fuentes/Staatliches-Regular.ttf");
+}
+
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Actor";
+}
+:root{
+  --fondo-principal: #4B6DA7;
+  --texto-principal: #2D3748;
+  --color-marca: #38B2AC;
+  --botones: #F6AD55;
+  --boton-secundario: #FB7D6D;
+  --fondo-secundario: #F5F9FA;
+}
+body{
+    background-color: var(--fondo-principal);
+    width: auto;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -20px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #C2C7D0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 22px;
+    color: #1A3D71;
+    font-family: "Modern", sans-serif;
+}
+
+.btn-logout {
+    background-color: #F0A754;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-family: "Modern", sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--fondo-secundario);
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    width: 85%;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.2);
+}
+.main-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* PANEL IZQUIERDO  */
+.panel-izquierdo {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.usuario-nombre {
+    font-size: 30px;
+    margin-top: 15px;
+    
+}
+
+.usuario-email {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+}
+
+.menu-item {
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: left;
+    font-family: "Actor", sans-serif;
+    font-weight: bold;
+}
+
+.menu-item.active {
+    background-color: #1A9A93;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* PANEL DERECHO */
+.panel-derecho {
+    width: 70%;
+}
+
+.titulo-seccion {
+    font-size: 26px;
+    text-align: center;
+    font-family: "Modern", sans-serif;
+    margin-bottom: 25px;
+    font-weight: lighter;
+}
+
+/* FORMULARIO */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 50px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.campo label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+    border: 1px solid #C5CCD4;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #F4F8FA;
+    font-size: 15px;
+}
+
+.campo textarea {
+    height: 140px;
+    resize: none;
+}
+
+
+.campo-textarea {
+    grid-column: span 2;
+}
+
+/* REDES SOCIALES */
+.redes-sociales select,
+.redes-sociales input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #C5CCD4;
+    background-color: #F4F8FA;
+}
+
+.social-add {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#add-social {
+    padding: 8px 15px;
+    background-color: var(--botones);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#add-social:hover {
+    background-color: var(--boton-secundario);
+}
+
+.social-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.social-list li {
+    margin: 5px 0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #eef5f7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-list img {
+    width: 22px;
+}
+
+.social-list a {
+    text-decoration: none;
+    color: #1A3D71;
+    font-weight: bold;
+}
+ 
+#social-url {
+    width: 400px;
+}
+
+.btn-guardar {
+    grid-column: span 2;            
+    margin-top: 10px;
+    padding: 12px 30px;
+    background-color: var(--botones);      
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    justify-self: center;          
+}
+
+.btn-guardar:hover {
+    background-color: var(--boton-secundario);     
+}
+
+.pantalla {
+    display: none;
+}
+
+.pantalla.visible {
+    display: block;
+}
+
+/* AQUI ESTÁ LO QUE CONCIERNE A LA CIUDAD Y LA PROVINCIA*/
+.fila-ubicacion {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 20px; 
+}
+
+.campo-provincia,
+.campo-ciudad {
+    grid-column: span 1;
+}
+
+.campo-provincia select{
+    font-size: 20px;
+    line-height: 38px;    
+    height: 38px;         
+    display: block;
+    border-radius: 5px;
+}
+
+/* PARA MODIFICAR Y ELIMINAR LA FOTO*/
+.avatar-usuario {
+    position: relative;
+    width: fit-content;
+}
+
+
+.editar-icono {
+    position: absolute;
+    top: 5px;        
+    right: 5px;       
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: 0.2s;
+}
+
+.editar-icono:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.borrar-foto {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.borrar-foto img {
+    width: 100%;
+    height: 100%;
+}
+
+.borrar-foto:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
