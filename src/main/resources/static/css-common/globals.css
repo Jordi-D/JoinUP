@@ -216,6 +216,8 @@ select.input-joinup:focus {
 
 
 .card-evento {
+    position: relative;
+    overflow: visible !important;
     border-radius: 5px;
     background: #ffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
@@ -292,4 +294,19 @@ select.input-joinup:focus {
 
 .card-evento-favorito-icono {
     height: 48px;
+}
+
+.card-evento .label {
+    font-family: "Actor";
+    position: absolute;
+    top: -5px;
+    right: -30px;
+    background: #ffa500fd;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px  solid #c5780f;
+    transform: rotate(40deg);
 }
