@@ -124,7 +124,7 @@ public class EventoController {
     }
 
     // ========================
-    // ✅ Buscar eventos por título
+    //  Buscar eventos por título
     // ========================
     @Operation(
             summary = "Search Events by Title REST API",
@@ -153,7 +153,7 @@ public class EventoController {
     }
 
     // ========================
-// ✅ Obtener participantes de un evento
+// Obtener participantes de un evento
 // ========================
     @Operation(
             summary = "Get Participants by Event ID REST API",
@@ -185,7 +185,7 @@ public class EventoController {
     }
 
     // ========================
-    // ✅ Eliminar un evento por ID
+    //  Eliminar un evento por ID
     // ========================
     @Operation(
             summary = "Delete Event REST API",

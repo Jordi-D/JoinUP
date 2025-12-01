@@ -25,13 +25,14 @@ public class PagoServiceImpl implements IPagoService {
 
     @Override
     public Pago procesarPago(Integer idUsuario, Double monto, String moneda) throws Exception {
+        // 1️⃣ Buscar usuario
         Usuario usuario = usuarioRepository.findById(idUsuario)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
-        // 1️⃣ Crear PaymentIntent en Stripe test
+        // 2️⃣ Crear PaymentIntent en Stripe (modo test)
         String idTransaccion = stripeService.crearPagoTest(monto, moneda);
 
-        // 2️⃣ Guardar pago en BD
+        // 3️⃣ Guardar pago en base de datos
         Pago pago = new Pago();
         pago.setUsuario(usuario);
         pago.setMonto(monto);
@@ -41,16 +42,13 @@ public class PagoServiceImpl implements IPagoService {
         pago.setIdTransaccion(idTransaccion);
         pagoRepository.save(pago);
 
-        // 3️⃣ Cambiar rol del usuario si el pago fue exitoso
+        // 4️⃣ Cambiar rol del usuario si el pago fue exitoso
         if ("exitoso".equalsIgnoreCase(pago.getEstado())) {
-            if (usuario.getRol() == Rol.PREMIUM) {
-                usuario.setRol(Rol.PREMIUM);
-            } else {
-                usuario.setRol(Rol.GRATUITO); // toggle si quieres
-            }
+            usuario.setRol(Rol.PREMIUM); // asignar rol PREMIUM
             usuarioRepository.save(usuario);
         }
 
         return pago;
     }
+
 }
