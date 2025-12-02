@@ -366,7 +366,7 @@ h2 {
 .fila-ubicacion {
     display: grid;
     grid-template-columns: 2fr 1fr; 
-    gap: 2rem; 
+    gap: 20rem; 
 }
 
 .campo-provincia,
