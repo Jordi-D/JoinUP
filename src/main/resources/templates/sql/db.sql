@@ -9,7 +9,6 @@ CREATE TABLE Intereses (
     int_v3 VARCHAR(45)
 );
 
--- Tabla: Usuarios
 CREATE TABLE Usuarios (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,
     d_nombre VARCHAR(45),
@@ -17,6 +16,7 @@ CREATE TABLE Usuarios (
     d_ap2 VARCHAR(45),
     d_email VARCHAR(45),
     d_password VARCHAR(45),
+
     -- Campos de dirección integrados
     dir_tipoVia VARCHAR(45),
     dir_via VARCHAR(45),
@@ -27,13 +27,25 @@ CREATE TABLE Usuarios (
     dir_provin VARCHAR(45),
     dir_pobla VARCHAR(45),
     dir_infoExtra VARCHAR(255),
+
+    -- Campos nuevos de intereses del usuario
+    int_v1 VARCHAR(45),
+    int_v2 VARCHAR(45),
+    int_v3 VARCHAR(45),
+
+    -- Campo para imagen (URL o ruta)
+    imagen VARCHAR(255),
+
     -- Otros campos
     id_interes INT,
-    d_rol ENUM('admin','organizador','usuario'),
+    d_rol ENUM('GRATUITO','PREMIUM'),
+
     FOREIGN KEY (id_interes) REFERENCES Intereses(id_interes)
         ON DELETE SET NULL
         ON UPDATE CASCADE
 );
+
+
 
 -- Tabla: Eventos
 CREATE TABLE Eventos (
@@ -116,15 +128,9 @@ CREATE TABLE pagos (
 
 
 
--- Cambiar idusuario y id evento sea unico y no se pueda unir mas de 1 vez
--- hacer una tabla nueva de deseados usuarios, para que aparezca los deseados que cada uno ha dado
--- cambiar a eventos que has ido endpoint
 
 
---hacer pago endpoint
---modificar usuario id y modificar intereses(ira dentro de usuarios )
 
---a eventos si precio >0 es de pago, else gratis
---eventos añadir localizacion
+--eventos añadir localizacion,
+--añadir imagen a usuario, y a eventos
 
---mimrar carpeta db y comparar repository mirar de elimnar deb

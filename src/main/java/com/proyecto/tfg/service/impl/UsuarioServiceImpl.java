@@ -15,12 +15,10 @@ import java.util.Optional;
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {
 
-    @Autowired
-    private UsuariosRepository repo;
-
     // 🔐 BCrypt para encriptar y comprobar contraseñas
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
+    @Autowired
+    private UsuariosRepository repo;
 
     @Override
     public void createAccount(Usuario usuario) {
@@ -55,6 +53,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
         newUsuario.setPoblacion(usuario.getPoblacion());
         newUsuario.setInfoExtra(usuario.getInfoExtra());
 
+        newUsuario.setIntV1(usuario.getIntV1());
+        newUsuario.setIntV2(usuario.getIntV2());
+        newUsuario.setIntV3(usuario.getIntV3());
+
+        newUsuario.setImagen(usuario.getImagen());
         // Rol por defecto
         if (usuario.getRol() == null) {
             newUsuario.setRol(Rol.GRATUITO);
@@ -62,7 +65,6 @@ public class UsuarioServiceImpl implements IUsuarioService {
             newUsuario.setRol(usuario.getRol());
         }
 
-        newUsuario.setInteres(usuario.getInteres());
 
         return newUsuario;
     }

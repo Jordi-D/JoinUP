@@ -29,9 +29,9 @@ public class Usuario {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "d_rol", nullable = false)
-    private Rol rol; // ENUM de roles
+    private Rol rol;
 
-    // ✅ Campos de dirección directamente en Usuario
+    // ✅ Campos de dirección
     @Column(name = "dir_tipoVia", length = 45)
     private String tipoVia;
 
@@ -59,13 +59,23 @@ public class Usuario {
     @Column(name = "dir_infoExtra", length = 255)
     private String infoExtra;
 
+    // ✅ Nuevos campos añadidos
+    @Column(name = "int_v1", length = 45)
+    private String intV1;
+
+    @Column(name = "int_v2", length = 45)
+    private String intV2;
+
+    @Column(name = "int_v3", length = 45)
+    private String intV3;
+
+    @Column(name = "imagen", length = 255)
+    private String imagen;
+
     // Relaciones
-    @ManyToOne
-    @JoinColumn(name = "id_interes")
-    private Interes interes;
 
     @OneToMany(mappedBy = "usuario")
-    @com.fasterxml.jackson.annotation.JsonIgnore // <--- ¡IMPORTANTE!
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<UsuarioEvento> eventos;
 
     // Getters y setters
@@ -197,13 +207,38 @@ public class Usuario {
         this.infoExtra = infoExtra;
     }
 
-    public Interes getInteres() {
-        return interes;
+    public String getIntV1() {
+        return intV1;
     }
 
-    public void setInteres(Interes interes) {
-        this.interes = interes;
+    public void setIntV1(String intV1) {
+        this.intV1 = intV1;
     }
+
+    public String getIntV2() {
+        return intV2;
+    }
+
+    public void setIntV2(String intV2) {
+        this.intV2 = intV2;
+    }
+
+    public String getIntV3() {
+        return intV3;
+    }
+
+    public void setIntV3(String intV3) {
+        this.intV3 = intV3;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
 
     public List<UsuarioEvento> getEventos() {
         return eventos;
